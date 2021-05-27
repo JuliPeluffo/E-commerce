@@ -1,1 +1,91 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+/*============Footer============*/
+footer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  background: #111;
+  height: auto;
+  width: 100%;
+  font-family: "open sans";
+  padding-top: 40px;
+  color: #fff;
+}
+
+.footer_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.footer_content h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+
+.footer_content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.footer_redes {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.footer_redes li {
+  margin: 0 10px;
+}
+
+.footer_redes a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul li a:hover {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+.footer_bottom {
+  background: #000;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer_bottom p {
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.footer_bottom span {
+  text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200;
+}
+/*# sourceMappingURL=styles.css.map */
