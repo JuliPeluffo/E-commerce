@@ -1,4 +1,4 @@
-//Función para crear los items
+// Función para crear los items
 
 // function Articulo(nombre, precio){
 //   this.nombre = nombre;
@@ -8,25 +8,101 @@
 // const cheesecake = new Articulo("Porcion de Cheesecake", 285);
 // console.log(cheesecake);
 
-//Tomar la información de un articulo a través del HTML
-// let torta = document.getElementsByClassName("torta");
-// console.log(torta[0].innerHTML);
-// console.log(torta[1].innerHTML);
+
+
+//Evento del mouse cuando alguien haga click en "Agregar al carrito. CON ID FUNCIONA
+
+// let agregarCarrito = document.getElementById("carrito");
+// agregarCarrito.onclick = () => {console.log("Producto Agregado a su carrito (por ID)")};
+// agregarCarrito.onmousemove = () => {console.log("COMPRAMEEEEE (ID)")};
+
+// //Evento del mouse cuando alguien haga click en "Agregar al carrito. CON CLASS NO FUNCIONA
+// let agregarCarrito1 = document.getElementsByClassName("carro");
+// agregarCarrito1.onclick = () => {console.log("Producto agregado (por clase)")};
+// agregarCarrito1.onmousemove = () => {console.log("COMPREMEEEEEEE (por clase)")};
+
+// //Contador para el carrito. Probando como hacer
+// let contador = document.getElementById("carro");
+// contador.addEventListener("click", suma1)
+// function suma1(){
+//   alert("suma 1 producto")
+// }
 
 
 
-//Modificar el nombre o precio del artículo
-
-//Borrar desde JS los nodos con el precio y nombre del articulo
-let torta = document.getElementsByClassName("torta");
-torta[0].parentNode.removeChild(torta[0]);
-torta[0].parentNode.removeChild(torta[0]);
-
-//Crear un nodo nuevo desde JS con un nombre y precio para el articulo
-let nuevoPrecio =document.createElement("div");
-nuevoPrecio.innerHTML = "$300";
-document.section.appendChild(nuevoPrecio); //No se como hacerlo aparecer en el div class torta.
-
-// document.body.appendChild(nuevoPrecio) // Funciona y aparece en el body, pero me lo agrega al final (detrás del footer) y no es lo que quiero jaja
 
 
+// Para la segunda entrega de proyecto final
+
+const clickButton = document.querySelectorAll(".addToCart")
+// console.log(clickButton);
+
+// Variable declarada para el carrito, donde después se van a pushear los items
+let carrito = [];
+
+// Variable para que se genere el cambio en el DOM
+let tbody = document.querySelector(".tbody")
+
+// Que se detecte el click en el agregar carrito
+clickButton.forEach(btn => {
+  btn.addEventListener("click", addToCarritoItem);
+})
+
+
+// Función que toma el nombre, precio e imagen del producto al momento de agregarlo al carrito
+function addToCarritoItem (e){
+  const button = e.target
+
+  const item = button.closest(".card");
+  const itemTitle = item.querySelector(".fw-bolder").textContent;
+  const itemPrice = item.querySelector(".item-price").textContent;
+  const itemImg = item.querySelector(".card-img-top").src;
+    // console.log(button);
+    // console.log(item)
+    // console.log(itemTitle);
+    // console.log(itemPrice);
+    // console.log(itemImg);
+  alert("Su producto " + itemTitle + " con un valor de " + itemPrice + " ha sido agregado satisfactoriamente a su carrito");
+
+
+  const newItem ={
+    title: itemTitle,
+    precio:itemPrice,
+    img: itemImg,
+    cantidad: 1
+  }
+
+  addItemCarrito(newItem)
+}
+
+
+function addItemCarrito(newItem){
+
+// Con esto lo meto en el array y creo el objeto de ese item
+  carrito.push(newItem);
+  console.log(newItem);
+}
+
+
+//Probando Jquery
+
+$(function(){
+  $("#segundo").css({"background-color":"red"});
+
+  $("#tercero").mouseenter(function(){
+   $("#segundo").hide();
+});
+
+$("#tercero").mouseleave(function(){
+    $("#segundo").show();
+});
+
+$("#crear").click(function(){
+    $(".jquery").before('<h5 class="paraBorrar">Lo de abajo es un refrán</h2>');
+})
+$("#borrar").click(function(){
+    $(".paraBorrar").remove();
+})
+
+
+});
