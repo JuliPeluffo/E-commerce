@@ -83,26 +83,41 @@ function addItemCarrito(newItem){
   console.log(newItem);
 }
 
-
-//Probando Jquery
-
-$(function(){
-  $("#segundo").css({"background-color":"red"});
-
-  $("#tercero").mouseenter(function(){
-   $("#segundo").hide();
-});
-
-$("#tercero").mouseleave(function(){
-    $("#segundo").show();
-});
-
-$("#crear").click(function(){
-    $(".jquery").before('<h5 class="paraBorrar">Lo de abajo es un refrán</h2>');
+$(".addToCart").click(function(){
+  $("img").fadeOut("fast", function(){
+    $("img").fadeIn("slow");
+  });
 })
-$("#borrar").click(function(){
-    $(".paraBorrar").remove();
-})
+// //Probando Jquery
+
+// $(function(){
+//   $("#segundo").css({"background-color":"red"});
+
+//   $("#tercero").mouseenter(function(){
+//    $("#segundo").hide();
+// });
+
+// $("#tercero").mouseleave(function(){
+//     $("#segundo").show();
+// });
+
+// $("#crear").click(function(){
+//     $(".jquery").before('<h5 class="paraBorrar">Lo de abajo es un refrán</h2>');
+// })
+// $("#borrar").click(function(){
+//     $(".paraBorrar").fadeOut();
+// })
 
 
-});
+// });
+// $("#pruebaFade").prepend('<h4 style"display:none" > ¡Probando el fadeIn!<h4>');
+// $("#hide").click(function(){
+//   $("h4").fadeOut("slow", function(){
+// $("h4").slideDown(1000);
+//   });
+// }
+// )
+
+// $("#fade").click(function(){
+//   $("h4").fadeIn();
+//   })
