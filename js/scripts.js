@@ -28,42 +28,37 @@
 //   alert("suma 1 producto")
 // }
 
-//Función para crear los items
-
-function Articulo(nombre, precio,){
-  this.nombre = nombre;
-  this.precio = precio;
-}
-
-//Creando los objetos
-const cheesecake = new Articulo("Porcion de Cheesecake", 285);
-// console.log(cheesecake);
-const boxDesayuno = new Articulo("Box de Desayuno o Merienda", 960);
-// console.log(boxDesayuno);
-const muffinBanana = new Articulo("Muffin de Banana Chocolate y Nuez", 180);
-// console.log(muffinBanana);
-const miniMagdalena = new Articulo("Mini Magdalenas de Durazno y Almendras x3", 200);
-// console.log(miniMagdalena);
-const humita = new Articulo("Humita de Pollo, Queso y Choclo", 570);
-// console.log(humita);
-const tartine = new Articulo("Tartine de Pollo al Curry", 610);
-// console.log(tartine);
-const malfattis = new Articulo("Malfattis de Ricota y Espinaca", 620);
-// console.log(malfattis);
-const ensaladaPollo = new Articulo("Ensalada de Pollo Asado y Queso Azúl", 590);
-// console.log(ensaladaPollo);
-
-
-// Para la segunda entrega de proyecto final
-
-const clickButton = document.querySelectorAll(".addToCart")
-// console.log(clickButton);
-
 // Variable declarada para el carrito, donde después se van a pushear los items
 let carrito = [];
 
-// Variable para que se genere el cambio en el DOM
-let tbody = document.querySelector(".tbody")
+//Función para crear los items
+function Articulo(id, nombre, precio, imagen,){
+  this.id = id;
+  this.nombre = nombre;
+  this.precio = precio;
+  this.imagen =imagen;
+}
+//Creando los objetos
+const cheesecake = new Articulo(1,"Porcion de Cheesecake", 285, "Cheesecake.jpg");
+// console.log(cheesecake);
+const boxDesayuno = new Articulo(2,"Box de Desayuno o Merienda", 960, "DesayunoMerienda.jpg");
+// console.log(boxDesayuno);
+const muffinBanana = new Articulo(3,"Muffin de Banana Chocolate y Nuez", 180, "muffinBanana.jpg");
+// console.log(muffinBanana);
+const miniMagdalena = new Articulo(4,"Mini Magdalenas de Durazno y Almendras x3", 200, "MiniMagda.jpg");
+// console.log(miniMagdalena);
+const humita = new Articulo(5,"Humita de Pollo, Queso y Choclo", 570, "Humita.jpg");
+// console.log(humita);
+const tartine = new Articulo(6,"Tartine de Pollo al Curry", 610, "PolloCurry.png");
+// console.log(tartine);
+const malfattis = new Articulo(7,"Malfattis de Ricota y Espinaca", 620,"Malfattis.png");
+// console.log(malfattis);
+const ensaladaPollo = new Articulo(8,"Ensalada de Pollo Asado y Queso Azúl", 590,"EnsaladaPollo.jpg");
+// console.log(ensaladaPollo);
+
+//Que se detecten los "Agregar al carrito"
+const clickButton = document.querySelectorAll(".addToCart")
+// console.log(clickButton);
 
 // Que se detecte el click en el agregar carrito
 clickButton.forEach(btn => {
@@ -117,6 +112,8 @@ $(".confirmacion").click(function(){
   $(".formulario").before('<form class="row g-3"><div class="col-md-6"><label for="inputEmail4" class="form-label">Email</label><input type="email" class="form-control" id="inputEmail4"></div><div class="col-md-6"><label for="nombreCompleto" class="form-label">Nombre Completo</label><input type="name" class="form-control"></div><div class="col-12"><label for="inputAddress" class="form-label">Domicilio</label><input type="text" class="form-control" id="inputAddress"></div></div><div class="col-md-4"><label for="inputState" class="form-label">Provincia</label><select id="inputState" class="form-select"><option selected>Buenos Aires</option><option>Capital Federal</option><option>Catamarca</option><option>Chaco</option><option>Chubut</option><option>Córdoba</option><option>Corrientes</option><option>Entre Ríos</option><option>Formosa</option><option>Jujuy</option><option>La Pampa</option><option>La Rioja</option><option>Mendoza</option><option>Misiones</option><option>Neuquén</option><option>Río Negro</option><option>Salta</option><option>San Juan</option><option>San Luis</option><option>Santa Cruz</option><option>Santa Fe</option><option>Santiago del Estero</option><option>Tierra del Fuego</option><option>Tucumán</option></select></div><div class="col-md-6"><label for="inputCity" class="form-label">Barrio</label><input type="text" class="form-control" id="inputCity"><div class="col-12"><br><button type="submit" class="btn btn-success">Confirmar Compra</button></div><br></form>');
 })
 
+// Variable para que se genere la tabla usando DOM
+let tbody = document.querySelector(".tbody")
 
 // //Probando Jquery
 
