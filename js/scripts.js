@@ -28,8 +28,30 @@
 //   alert("suma 1 producto")
 // }
 
+//Función para crear los items
 
+function Articulo(nombre, precio,){
+  this.nombre = nombre;
+  this.precio = precio;
+}
 
+//Creando los objetos
+const cheesecake = new Articulo("Porcion de Cheesecake", 285);
+// console.log(cheesecake);
+const boxDesayuno = new Articulo("Box de Desayuno o Merienda", 960);
+// console.log(boxDesayuno);
+const muffinBanana = new Articulo("Muffin de Banana Chocolate y Nuez", 180);
+// console.log(muffinBanana);
+const miniMagdalena = new Articulo("Mini Magdalenas de Durazno y Almendras x3", 200);
+// console.log(miniMagdalena);
+const humita = new Articulo("Humita de Pollo, Queso y Choclo", 570);
+// console.log(humita);
+const tartine = new Articulo("Tartine de Pollo al Curry", 610);
+// console.log(tartine);
+const malfattis = new Articulo("Malfattis de Ricota y Espinaca", 620);
+// console.log(malfattis);
+const ensaladaPollo = new Articulo("Ensalada de Pollo Asado y Queso Azúl", 590);
+// console.log(ensaladaPollo);
 
 
 // Para la segunda entrega de proyecto final
