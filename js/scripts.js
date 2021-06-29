@@ -52,7 +52,6 @@ clickButton.forEach(btn => {
 // Función que toma el nombre, precio e imagen del producto al momento de agregarlo al carrito
 function addToCarritoItem (e){
   const button = e.target
-
   const item = button.closest(".card");
   const itemTitle = item.querySelector(".fw-bolder").textContent;
   const itemPrice = item.querySelector(".item-price").textContent;
@@ -62,7 +61,7 @@ function addToCarritoItem (e){
     // console.log(itemTitle);
     // console.log(itemPrice);
     // console.log(itemImg);
-  alert("Su producto " + itemTitle + " con un valor de " + itemPrice + " ha sido agregado satisfactoriamente a su carrito");
+  alert("Su producto " + itemTitle+ " con un valor de " + itemPrice + " ha sido agregado satisfactoriamente a su carrito");
 
 
   const newItem ={
@@ -82,12 +81,21 @@ function addItemCarrito(newItem){
   carrito.push(newItem);
   console.log(newItem);
 }
-
+//Animacion concatenada para que aparezca y desaparezca la imagen al momento de comprar algo
 $(".addToCart").click(function(){
   $("img").fadeOut("fast", function(){
     $("img").fadeIn("slow");
   });
 })
+//
+//Que aparezca un form al apretar el botón de confirmar carrito
+$(".confirmacion").click(function(){
+  // console.log("haz hecho click");
+  $(".confirmacion").hide();
+  $(".formulario").before('<form class="row g-3"><div class="col-md-6"><label for="inputEmail4" class="form-label">Email</label><input type="email" class="form-control" id="inputEmail4"></div><div class="col-md-6"><label for="nombreCompleto" class="form-label">Nombre Completo</label><input type="name" class="form-control"></div><div class="col-12"><label for="inputAddress" class="form-label">Domicilio</label><input type="text" class="form-control" id="inputAddress"></div></div><div class="col-md-4"><label for="inputState" class="form-label">Provincia</label><select id="inputState" class="form-select"><option selected>Buenos Aires</option><option>Capital Federal</option><option>Catamarca</option><option>Chaco</option><option>Chubut</option><option>Córdoba</option><option>Corrientes</option><option>Entre Ríos</option><option>Formosa</option><option>Jujuy</option><option>La Pampa</option><option>La Rioja</option><option>Mendoza</option><option>Misiones</option><option>Neuquén</option><option>Río Negro</option><option>Salta</option><option>San Juan</option><option>San Luis</option><option>Santa Cruz</option><option>Santa Fe</option><option>Santiago del Estero</option><option>Tierra del Fuego</option><option>Tucumán</option></select></div><div class="col-md-6"><label for="inputCity" class="form-label">Barrio</label><input type="text" class="form-control" id="inputCity"><div class="col-12"><br><button type="submit" class="btn btn-success">Confirmar Compra</button></div><br></form>');
+})
+
+
 // //Probando Jquery
 
 // $(function(){
